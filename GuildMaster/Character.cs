@@ -82,6 +82,14 @@ namespace GuildMaster
     public class NPC : Character
     {
         public int HD;
+
+
+
+        //public enum Monster
+        //{
+        //    Badger,
+        //    Ankheg
+        //}
     }
 
     public class AC : Character

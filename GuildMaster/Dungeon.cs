@@ -16,6 +16,12 @@ namespace GuildMaster
         public Dungeon(int lvl)
         {
             level = lvl;
+
+            for(int i = 0; i < 5; i++)
+            {
+                rooms.Add(new Room(lvl));
+            }
+            rooms.Add(new Room(lvl, true));
         }
     }
 
@@ -24,5 +30,12 @@ namespace GuildMaster
         public List<Item> loot = new List<Item>();
         public List<NPC> enemies = new List<NPC>();
         public int encounterLevels;
+
+
+        public Room(int lvl, bool bossRoom = false)
+        {
+            int points = lvl * 5;
+
+        }
     }
 }
