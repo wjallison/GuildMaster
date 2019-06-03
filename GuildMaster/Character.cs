@@ -83,8 +83,38 @@ namespace GuildMaster
     {
         public int HD;
 
+        //maxHP in Character
+        //hp in Character
+        //armorClass in Character
+        //name in Character
+        public string attackName;
+        public int toHitMod;
+        public int atkNumDie;
+        public int atkDieNumber;
+        public int atkBonus;
 
-
+        public NPC() { }
+        public NPC(string _name, int _hd, int _hdNum, int _hdBonus, int _ac, int _toHitMod,
+            string _atkName, int _atkNumDie, int _atkDieNum, int _atkBonus)
+        {
+            name = _name;
+            HD = _hd;
+            Random r = new Random();
+            int sum = 0;
+            for(int i = 0; i < HD; i++)
+            {
+                sum += r.Next(1, _hdNum+1);
+            }
+            maxHP = sum + _hdBonus;
+            hp = maxHP;
+            armorClass = _ac;
+            toHitMod = _toHitMod;
+            attackName = _atkName;
+            atkNumDie = _atkNumDie;
+            atkDieNumber = _atkDieNum;
+            atkBonus = _atkBonus;
+        }
+        
         //public enum Monster
         //{
         //    Badger,

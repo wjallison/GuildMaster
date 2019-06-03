@@ -44,7 +44,7 @@ namespace GuildMaster
             int sum = 0;
             for(int i = 0; i < roster.Count; i++)
             {
-                threatVals.Add(roster[i].numDice * roster[i].diceNum + roster[i].bonus + roster[i].AC * roster[i].maxHP);
+                threatVals.Add(roster[i].numDice * roster[i].diceNum + roster[i].bonus + roster[i].armorClass * roster[i].maxHP);
                 sum += threatVals[i];
             }
             partyThreat = sum;
@@ -58,7 +58,7 @@ namespace GuildMaster
             }
             for (int i = 0; i < roster.Count; i++)
             {
-                squishinessVals.Add(roster[i].AC * roster[i].maxHP);
+                squishinessVals.Add(roster[i].armorClass * roster[i].maxHP);
                 if (squishinessVals[i] > maxSquish)
                 {
                     maxSquish = squishinessVals[i];
@@ -75,7 +75,7 @@ namespace GuildMaster
                 squishinessVals.Clear();
                 for (int i = 0; i < temp.Count; i++)
                 {
-                    squishinessVals.Add(temp[i].AC * temp[i].maxHP);
+                    squishinessVals.Add(temp[i].armorClass * temp[i].maxHP);
                     if (squishinessVals[i] > maxSquish) { maxSquish = squishinessVals[i]; maxInd = i; }
                 }
 

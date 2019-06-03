@@ -13,15 +13,15 @@ namespace GuildMaster
         public string name;
         public int reward;
 
-        public Dungeon(int lvl)
+        public Dungeon(int lvl, List<NPC> npcList)
         {
             level = lvl;
 
             for(int i = 0; i < 5; i++)
             {
-                rooms.Add(new Room(lvl));
+                rooms.Add(new Room(lvl, npcList));
             }
-            rooms.Add(new Room(lvl, true));
+            rooms.Add(new Room(lvl, npcList, true));
         }
     }
 
@@ -32,7 +32,7 @@ namespace GuildMaster
         public int encounterLevels;
 
 
-        public Room(int lvl, bool bossRoom = false)
+        public Room(int lvl, List<NPC> npcList, bool bossRoom = false)
         {
             int points = lvl * 5;
 

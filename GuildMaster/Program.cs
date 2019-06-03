@@ -63,8 +63,11 @@ namespace GuildMaster
                     string atkName = rx3.Match(line).ToString().Split(' ')[0];
                     int atkToHitBonus = Convert.ToInt32(rx3.Match(line).ToString().Split('+')[1]);
 
+                    npcList.Add(new NPC(name, hd, numHD, bonusHD, ac, atkToHitBonus, atkName, atkNum, atkDice, atkBonus));
                 }
             }
+
+
 
 
 
